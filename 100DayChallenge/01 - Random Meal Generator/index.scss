@@ -1,0 +1,72 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #e6dede;
+}
+.Container {
+  width: 80vw;
+  margin: 200px auto;
+  .header {
+    text-align: center;
+
+    button {
+      margin-top: 25px;
+    }
+    .button {
+      $buttonColor: #b1148a;
+      $hoveredButton: #77105d;
+      width: 100px;
+      height: 40px;
+      background-color: $buttonColor;
+      border-color: $buttonColor;
+      color: #c2bebe;
+
+      &:hover {
+        background-color: $hoveredButton;
+        border-color: $hoveredButton;
+      }
+    }
+  }
+
+  #MealInfoContainer {
+    width: 80vw;
+    margin-top: 50px;
+    .MealInfo-header {
+      display: flex;
+      height: 350px;
+
+      .MealImage {
+        width: 45%;
+        height: 400px;
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      .Header-right {
+        width: 55%;
+        padding: 30px;
+        h2 {
+          margin-bottom: 40px;
+        }
+
+        p {
+          font-size: 20px;
+        }
+      }
+    }
+
+    .MealIngredient {
+      margin-top: 70px;
+    }
+  }
+
+  .vidContainer {
+    text-align: center;
+    
+  }
+}
