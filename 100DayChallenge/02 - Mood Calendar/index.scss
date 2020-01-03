@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+$ColorMood1: #2d6b5f;
+$ColorMood2: #72e3a6;
+$ColorMood3: #dff4c7;
+$ColorMood4: #edbf98;
+$ColorMood5: #ea3d36;
+
+$MoodColor: $ColorMood1, $ColorMood2, $ColorMood3, $ColorMood4, $ColorMood5;
+
+body {
+  background-color: #cacaca;
+}
+
+.container {
+  .moodContainer {
+    text-align: center;
+  }
+
+  .moodsContainer {
+    text-align: center;
+    @each $Color in $MoodColor {
+      $i: index($MoodColor, $Color);
+      .mood_#{$i} {
+        color: $Color;
+      }
+    }
+
+    .mood {
+      background-color: #cacaca;
+      border-radius: 100%;
+      font-size: 30px;
+      width: 55px;
+      height: 55px;
+      margin: 0 5px;
+
+      i {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .calendar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    .months {
+      padding: 10px;
+      width: 33%;
+    }
+  }
+}
+
+.months h3 {
+	margin: 5px 0;
+	text-align: center;
+}
+
+.days_container,
+.week_days_container {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.days,
+.week_days {
+	font-size: 14px;
+	margin-bottom: 5px;
+	height: calc(100% / 7);
+	width: calc(100% / 7);
+	text-align: center;
+}
+
+.days .circle {
+	background-color: #888;
+	border-radius: 50%;
+	color: #fff;
+	cursor: pointer;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 10px;
+	width: 20px;
+	height: 20px;
+}
+
+.days .circle:hover {
+	transform: scale(1.1);
+}
+
+.action_btn {
+	border-radius: 10px 0 0 10px;
+	border: none;
+	color: #fff;
+	cursor: pointer;
+	font-size: 14px;
+	padding: 8px 12px;
+	margin: 0;
+	position: fixed;
+	right: 0;
+	top: 40px;
+}
+
+.action_btn:active {
+	transform: scale(0.9);
+}
+
+.action_btn:focus {
+	outline: 0;
+}
+
+.randomize {
+	background-color: var(--mood-color-2);
+}
+
+.clear {
+	background-color: #888;
+	top: 80px;
+}
